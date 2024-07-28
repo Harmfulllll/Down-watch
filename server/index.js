@@ -7,11 +7,24 @@
 
 /* import dependencies */
 import express from "express";
+import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
+import cors from "cors";
 
 /* import from other files */
 import connectDB from "./database/db.js";
 
+/* config */
 const app = express();
+dotenv.config();
+app.use(express.json());
+app.use(cookieParser());
+app.use(
+  cors({
+    origin: process.env.CORS_ORIGIN,
+    credentials: true,
+  })
+);
 
 app.get("/", (req, res) => {
   res.send("Hello world");
