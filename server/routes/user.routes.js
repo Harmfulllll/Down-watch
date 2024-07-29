@@ -1,6 +1,6 @@
 import express from "express";
 import verify from "../middlewares/verify.middleware.js";
-import { login, logout, register } from "../controllers/user.controller";
+import { login, logout, register } from "../controllers/user.controller.js";
 
 const router = express.Router();
 

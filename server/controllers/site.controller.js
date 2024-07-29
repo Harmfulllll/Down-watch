@@ -137,4 +137,30 @@ const deleteSite = async (req, res) => {
     return res.status(500).json(new apiResponse(401, [], error.message));
   }
 };
-export { addSite, getSites, deleteSite };
+
+const getAllSites = async (req, res) => {
+  try {
+    const sites = await siteModel.find();
+    if (!sites) {
+      return res
+        .status(401)
+        .json(new apiResponse(401, [], "No sites found in the database"));
+    }
+    return res.status(200).json(
+      new apiResponse(
+        200,
+        [
+          {
+            count: sites.length,
+            sites,
+          },
+        ],
+        "Sites found successfully"
+      )
+    );
+  } catch (error) {
+    return res.status(500).json(new apiResponse(401, [], error.message));
+  }
+};
+
+export { addSite, getSites, deleteSite, getAllSites };

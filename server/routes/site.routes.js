@@ -8,8 +8,8 @@ import {
 
 const router = express.Router();
 
-router.post("/add-site", verify, addSite);
-router.get("/get-sites", verify, getSites);
-router.delete("/delete-site/:id", verify, deleteSite);
+router.post("/add", verify, addSite);
+router.get("/get-all", verify, getSites);
+router.delete("/delete/:id", verify, deleteSite);
 
 export default router;

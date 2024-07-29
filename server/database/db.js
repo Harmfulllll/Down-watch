@@ -1,3 +1,10 @@
+/*
+ * Title: db.js
+ * Description : Database connection file
+ * Author: Tanvir Hassan Joy
+ * Date: 2024-07-29 11:02:49
+ */
+
 import mongoose from "mongoose";
 
 const connectDB = async () => {
