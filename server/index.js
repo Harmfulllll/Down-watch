@@ -16,6 +16,7 @@ import Bree from "bree";
 import connectDB from "./database/db.js";
 import userRoutes from "./routes/user.routes.js";
 import siteRoutes from "./routes/site.routes.js";
+import getStatus from "./Jobs/getStatus.js";
 
 /* config */
 const app = express();
@@ -33,21 +34,29 @@ app.use(
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/site", siteRoutes);
 
+const port = process.env.PORT || 3000;
 const bree = new Bree({
   jobs: [
     {
       name: "getStatus",
-      interval: "1m",
+      interval: "30s",
+      path: "./jobs/getStatus.js",
     },
   ],
 });
 
-bree.start();
-
-const port = process.env.PORT || 3000;
-
-connectDB().then(() => {
-  app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+connectDB()
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`Server is running on port ${port}`);
+    });
+    bree.start();
+  })
+  .catch((error) => {
+    console.log(error);
   });
+bree.on("worker created", (name, worker) => {
+  if (name === "getStatus") {
+    getStatus();
+  }
 });

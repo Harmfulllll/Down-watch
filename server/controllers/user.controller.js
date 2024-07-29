@@ -39,7 +39,6 @@ const register = async (req, res) => {
     return res.status(500).json(new apiResponse(401, [], error.message));
   }
 };
-
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;

@@ -4,11 +4,11 @@ const checkStatus = async (url) => {
   try {
     let result = await fetch(url);
     if (result.status === 200) {
-      return true;
+      return "up";
     }
-    return false;
+    return "down";
   } catch (error) {
-    return false;
+    return "down";
   }
 };
 
