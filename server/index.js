@@ -39,7 +39,7 @@ const bree = new Bree({
   jobs: [
     {
       name: "getStatus",
-      interval: "30s",
+      interval: "5m",
       path: "./jobs/getStatus.js",
     },
   ],
