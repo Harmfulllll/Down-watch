@@ -138,14 +138,4 @@ const deleteSite = async (req, res) => {
   }
 };
 
-const getAllSites = async () => {
-  try {
-    const sites = await siteModel.find({});
-    console.log(sites);
-    return sites;
-  } catch (error) {
-    console.log(error.message);
-  }
-};
-
-export { addSite, getSites, deleteSite, getAllSites };
+export { addSite, getSites, deleteSite };
