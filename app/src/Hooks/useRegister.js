@@ -8,17 +8,6 @@ function useRegister() {
   const navigate = useNavigate();
 
   const register = async ({ username, email, password }) => {
-    if (password.length < 6) {
-      toast.error("Password must be at least 6 characters long", {
-        duration: 3000,
-        position: "top-center",
-        style: {
-          background: "red",
-          color: "white",
-        },
-      });
-      return false;
-    }
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -32,6 +21,17 @@ function useRegister() {
         { username, email, password },
         config
       );
+      if (password.length < 6) {
+        toast.error("Password must be at least 6 characters long", {
+          duration: 3000,
+          position: "top-center",
+          style: {
+            background: "red",
+            color: "white",
+          },
+        });
+        return false;
+      }
       if (res.error) {
         throw new Error(res.error);
       }
