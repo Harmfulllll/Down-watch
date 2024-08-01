@@ -9,12 +9,15 @@ const register = async (req, res) => {
         .status(401)
         .json(new apiResponse(401, [], "Please fill all fields"));
     }
-    const userExists = await userModel.findOne({ email });
-    if (userExists) {
+
+    let userExists = await userModel.findOne({ email });
+    let usernameExists = await userModel.findOne({ username });
+    if (userExists || usernameExists) {
       return res
         .status(401)
         .json(new apiResponse(401, [], "User already exists"));
     }
+
     const newUser = new userModel({ username, email, password });
     if (newUser) {
       newUser.generateJWT(res);

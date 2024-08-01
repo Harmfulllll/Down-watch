@@ -23,12 +23,20 @@ function Home() {
             <div className="heading">
               <h1 className="heading-1">Uptime is everything &amp; </h1>
               <br />
-              <h1 className="heading-2">we know it.</h1>{" "}
+              <h1 className="heading-2">we know it</h1>{" "}
             </div>
             <p>
-              Ensure your website stays up and running with real-time monitoring
-              and instant alerts
+              Ensure your website stays up and running with <br />{" "}
+              <span>real-time monitoring and instant alerts</span>
             </p>
+            <h4 className="get-started">
+              <a href="">Get Started</a>
+            </h4>
+            <div class="hero">
+              <div class="hero-1"></div>
+              <div class="hero-2"></div>
+              <div class="hero-3"></div>
+            </div>
           </div>
         </div>
       </div>

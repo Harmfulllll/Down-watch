@@ -84,8 +84,10 @@ body {
     padding-bottom: 2.5vw;
 
     .heading {
-      letter-spacing: 0.1em;
-      line-height: 1;
+      letter-spacing: -0.1em;
+      line-height: 0.9;
+      font-family: "Crimson Pro";
+      margin-bottom: 1vw;
     }
 
     .heading-1 {
@@ -115,6 +117,112 @@ body {
       font-family: "Space Mono";
       font-weight: 300;
       font-size: 24px;
+
+      span {
+        position: relative;
+        left: 3vw;
+      }
+    }
+    .get-started {
+      padding: 10px 15px;
+      font-size: 1rem;
+      font-weight: 400;
+      border-radius: 10px;
+      border: 2px solid #00000021;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+      transition: all ease 0.45s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #000000fa;
+        left: -95%;
+        bottom: 0;
+      }
+      &:hover::after {
+        left: 0;
+        border-radius: 0;
+        transition: all ease 0.45s;
+      }
+      a {
+        text-decoration: none;
+        color: var(--button-color);
+        position: relative;
+        z-index: 9;
+      }
+      &:hover {
+        border-color: #201e43;
+        box-shadow: 0 0 10px #201e43;
+      }
+      &:hover a {
+        color: #fff;
+      }
+    }
+  }
+  .hero {
+    position: absolute;
+    height: 14vw;
+    width: 20vw;
+    right: 10vh;
+    top: 35vh;
+  }
+  /*   .hero-1 {
+    background-color: #fe320a;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    filter: blur(25px);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+  } */
+  .hero-2 {
+    background: linear-gradient(#fe320a, #fe3f0a);
+    position: absolute;
+    height: 30vw;
+    width: 30vw;
+    filter: blur(25px);
+    border-radius: 50%;
+    animation-name: animation2;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  /*   .hero-3 {
+    background: linear-gradient(#fe320a, #fe3f0a);
+    position: absolute;
+    height: 30vw;
+    width: 30vw;
+    filter: blur(25px);
+    border-radius: 50%;
+    animation-name: animation1;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+ */
+  @keyframes animation1 {
+    from {
+      transform: translate(55%, -3%);
+    }
+
+    to {
+      transform: translate(0%, 10%);
+    }
+  }
+
+  @keyframes animation2 {
+    from {
+      transform: translate(35%, -5%);
+    }
+
+    to {
+      transform: translate(-40%, 4%);
     }
   }
 }
