@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 import useLogin from "../../Hooks/useLogin.js";
 
 function Login() {
-  const { login, loading } = useLogin();
+  const { loginUser, loading } = useLogin();
   const [state, setState] = useState({
     email: "",
     password: "",
   });
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await login({
+    await loginUser({
       email: state.email,
       password: state.password,
     });
@@ -45,7 +45,7 @@ function Login() {
               onChange={(e) => handleChange(e)}
             />
             <button className="login-submit" disabled={loading}>
-              {loading ? <BeatLoader color="white" size={10} /> : "Sign Up"}
+              {loading ? <BeatLoader color="white" size={10} /> : "Login"}
             </button>
             <div className="no-account">
               <Link className="link" to="/register">
