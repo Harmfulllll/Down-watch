@@ -13,8 +13,14 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/register"
+          element={user ? <Navigate to="/dashboard" /> : <Signup />}
+        />
+        <Route
+          path="/login"
+          element={user ? <Navigate to="/dashboard" /> : <Login />}
+        />
         <Route
           path="/dashboard"
           element={user ? <Dashboard /> : <Navigate to="/login" />}

@@ -104,7 +104,9 @@ const deleteSite = async (req, res) => {
     if (!user) {
       return res.status(401).json(new apiResponse(401, [], "User not found"));
     }
-    const siteExistsInUser = user.websites.includes(id);
+    const siteExistsInUser = user.websites
+      .map((website) => website.toString())
+      .includes(id);
     if (!siteExistsInUser) {
       return res
         .status(401)
