@@ -14,7 +14,10 @@ const siteSlice = createSlice({
     deleteSite: (state, action) => {
       state.site = action.payload;
     },
+    addASite: (state, action) => {
+      state.site = action.payload;
+    },
   },
 });
 export default siteSlice.reducer;
-export const { getSites, deleteSite } = siteSlice.actions;
+export const { getSites, deleteSite, addASite } = siteSlice.actions;

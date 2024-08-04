@@ -12,7 +12,7 @@ function DashboardBody() {
   const { deleteData, deleteLoading } = useDelete();
   React.useEffect(() => {
     getAllSites();
-  }, []);
+  }, [deleteData]);
 
   const deleteSite = async (id) => {
     if (window.confirm("Are you sure you want to delete this site?")) {
@@ -40,9 +40,8 @@ function DashboardBody() {
         </div>
       </div>
 
-      {sitesLoading && <BeatLoader />}
-
       <div className="site-items">
+        {sitesLoading && <BeatLoader />}
         {sites?.data?.length > 0 && sites?.data[0]?.sites?.length > 0 ? (
           sites?.data[0]?.sites
             ?.filter(({ url }) => {

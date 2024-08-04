@@ -1,12 +1,13 @@
-import fetch from "node-fetch";
+import axios from "axios";
 
 const checkStatus = async (url) => {
   try {
-    let result = await fetch(url);
-    if (result.status === 200) {
+    const response = await axios.get(url);
+    if (response.status >= 200 && response.status < 300) {
       return "up";
+    } else {
+      return "down";
     }
-    return "down";
   } catch (error) {
     return "down";
   }
