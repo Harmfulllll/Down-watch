@@ -12,10 +12,10 @@ function Home() {
             </div>
             <div className="nav-right">
               <h4>
-                <a href="">Sign In</a>
+                <a href="./login">Sign In</a>
               </h4>
               <h4>
-                <a href="">Contact</a>
+                <a href="https://github.com/Harmfulllll">Contact</a>
               </h4>
             </div>
           </div>
@@ -30,7 +30,7 @@ function Home() {
               <span>real-time monitoring and instant alerts</span>
             </p>
             <h4 className="get-started">
-              <a href="">Get Started</a>
+              <a href="./register">Get Started</a>
             </h4>
             <div class="hero">
               <div class="hero-1"></div>
