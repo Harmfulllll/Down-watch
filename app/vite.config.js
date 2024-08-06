@@ -8,8 +8,11 @@ export default defineConfig({
     port: 5173,
     proxy: {
       "/api": {
-        target: "http://localhost:4500",
+        target: "https://down-watch.vercel.app/",
       },
     },
+  },
+  build: {
+    outDir: "dist",
   },
 });
