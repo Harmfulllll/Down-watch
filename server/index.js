@@ -38,7 +38,7 @@ const bree = new Bree({
     {
       name: "getStatus",
       interval: "5m",
-      path: "server/jobs/getStatus.js",
+      path: "./jobs/getStatus.js",
     },
   ],
 });
