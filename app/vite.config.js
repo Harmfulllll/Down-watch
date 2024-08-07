@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://down-watch.vercel.app",
+        target: "https://down-watch.onrender.com",
       },
     },
   },
