@@ -16,7 +16,7 @@ import Bree from "bree";
 import connectDB from "./database/db.js";
 import userRoutes from "./routes/user.routes.js";
 import siteRoutes from "./routes/site.routes.js";
-import getStatus from "./Jobs/getStatus.js";
+import getStatus from "./jobs/getStatus.js";
 
 /* config */
 const app = express();
@@ -38,7 +38,7 @@ const bree = new Bree({
     {
       name: "getStatus",
       interval: "5m",
-      path: "server/Jobs/getStatus.js",
+      path: "server/jobs/getStatus.js",
     },
   ],
 });
