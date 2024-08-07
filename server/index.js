@@ -16,7 +16,7 @@ import Bree from "bree";
 import connectDB from "./database/db.js";
 import userRoutes from "./routes/user.routes.js";
 import siteRoutes from "./routes/site.routes.js";
-import getStatus from "./jobs/getStatus.js";
+import getStatus from "./Jobs/getStatus.js";
 
 /* config */
 const app = express();
