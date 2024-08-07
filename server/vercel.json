@@ -6,7 +6,7 @@
       "use": "@vercel/node"
     },
     {
-      "src": "jobs/getStatus.js",
+      "src": "server/jobs/getStatus.js",
       "use": "@vercel/node"
     }
   ],
