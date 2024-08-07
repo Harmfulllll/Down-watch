@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "build": "npm install"
+    "install": "npm install",
+    "build": "npm run build",
+    "render-build": "npm install && npm run build"
   },
   "author": "Tanvir Hassan Joy",
   "license": "ISC",
