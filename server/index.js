@@ -12,8 +12,9 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import Bree from "bree";
 import https from "https";
+import rootCas from "ssl-root-cas/latest";
 
-https.globalAgent.options.ca = require("ssl-root-cas/latest").create();
+https.globalAgent.options.ca = rootCas.create();
 
 /* import from other files */
 import connectDB from "./database/db.js";
