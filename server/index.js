@@ -12,7 +12,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import Bree from "bree";
 import https from "https";
-import rootCas from "ssl-root-cas/latest";
+import rootCas from "ssl-root-cas-latest";
 
 https.globalAgent.options.ca = rootCas.create();
 
