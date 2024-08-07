@@ -26,6 +26,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("API is running");
+});
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/site", siteRoutes);
 
