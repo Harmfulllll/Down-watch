@@ -11,6 +11,9 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import Bree from "bree";
+import https from "https";
+
+https.globalAgent.options.ca = require("ssl-root-cas/latest").create();
 
 /* import from other files */
 import connectDB from "./database/db.js";
