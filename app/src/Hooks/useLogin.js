@@ -18,7 +18,7 @@ function useLogin() {
     try {
       setLoading(true);
       const res = await axios.post(
-        "https://down-watch.onrender.com/api/v1/user/login",
+        "/api/v1/user/login",
         {
           email,
           password,
