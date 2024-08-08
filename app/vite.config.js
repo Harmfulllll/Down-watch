@@ -6,11 +6,11 @@ export default defineConfig({
   plugins: [react()],
   port: 5173,
   server: {
-    proxy: {
+    /*     proxy: {
       "/api": {
         target: "https://down-watch.onrender.com",
       },
-    },
+    }, */
   },
   resolve: {
     alias: {
