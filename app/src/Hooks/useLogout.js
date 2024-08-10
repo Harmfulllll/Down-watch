@@ -17,7 +17,11 @@ export default function useLogout() {
       withCredentials: true,
     };
     try {
-      const res = await axios.post("/api/v1/user/logout", {}, config);
+      const res = await axios.post(
+        "https://down-watch.onrender.com/api/v1/user/logout",
+        {},
+        config
+      );
       if (res.error) {
         throw new Error(res.error);
       }
