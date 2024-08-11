@@ -11,8 +11,8 @@ function useAddSite() {
   const config = {
     headers: {
       "Content-Type": "application/json",
+      withCredentials: true,
     },
-    withCredentials: true,
   };
   const addSite = async (url) => {
     try {

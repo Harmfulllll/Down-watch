@@ -12,13 +12,13 @@ function useLogin() {
     const config = {
       headers: {
         "Content-Type": "application/json",
+        withCredentials: true,
       },
-      withCredentials: true,
     };
     try {
       setLoading(true);
       const res = await axios.post(
-        "https://down-watch.vercel.app/api/v1/user/login",
+        "/api/v1/user/login",
         {
           email,
           password,

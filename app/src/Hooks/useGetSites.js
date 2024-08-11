@@ -10,8 +10,8 @@ function useGetSites() {
   const config = {
     headers: {
       "Content-Type": "application/json",
+      withCredentials: true,
     },
-    withCredentials: true,
   };
   const getAllSites = async () => {
     try {

@@ -11,8 +11,8 @@ function useRegister() {
     const config = {
       headers: {
         "Content-Type": "application/json",
+        withCredentials: true,
       },
-      withCredentials: true,
     };
     try {
       setLoading(true);
